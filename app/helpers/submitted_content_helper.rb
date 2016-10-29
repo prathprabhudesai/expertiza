@@ -69,11 +69,6 @@ module SubmittedContentHelper
     html
   end
 
-  def display_hyperlink_in_peer_review_question(comments)
-    html = ''
-    html += link_to image_tag('/assets/tree_view/List-hyperlinks-24.png'), comments, target: '_blank'
-  end
-
   def list_sub_directories(file, participant)
     index = 0
     ret = "<ul id= 'subdir." + index.to_s + "." + index.to_s + "'>"
