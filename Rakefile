@@ -4,4 +4,12 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+begin
+  require 'minitest/autorun'
+rescue LoadError => e
+  raise e unless ENV['RAILS_ENV'] == "production"
+end
+
 Expertiza::Application.load_tasks
+
+

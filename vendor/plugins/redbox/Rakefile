@@ -2,6 +2,12 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
 
+begin
+  require 'minitest/autorun'
+rescue LoadError => e
+  raise e unless ENV['RAILS_ENV'] == "production"
+end
+
 desc 'Default: run unit tests.'
 task :default => :test
 
